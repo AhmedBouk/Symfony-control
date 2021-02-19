@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use App\Repository\MoviesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -37,6 +38,11 @@ class Movies
      */
     private $created_at;
 
+    public function __construct()
+    {
+
+        $this->created_at = new DateTime('now');
+    }
     public function getId(): ?int
     {
         return $this->id;
