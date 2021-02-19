@@ -43,6 +43,10 @@ class Movies
 
         $this->created_at = new DateTime('now');
     }
+    public function __toString()
+    {
+        return (string) $this->getNom();
+    }
     public function getId(): ?int
     {
         return $this->id;
